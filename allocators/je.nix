@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "jemalloc";
     repo = "jemalloc";
-    rev = versions.${name}.commit;
+    rev = versions.${name}.rev;
     sha256 = versions.${name}.sha256;
   };
   nativeBuildInputs = with pkgs; [ autoconf automake ];

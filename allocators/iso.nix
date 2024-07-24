@@ -9,7 +9,7 @@ clangStdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "struct";
     repo = "isoalloc";
-    rev = versions.${name}.commit;
+    rev = versions.${name}.rev;
     sha256 = versions.${name}.sha256;
   };
   makeFlags = [ "library" ];

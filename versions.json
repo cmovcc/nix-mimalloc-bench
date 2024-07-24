@@ -1,62 +1,62 @@
 {
 	"ff": {
 		"_comment": "unmaintained since 2022",
-		"commit": "master",
+		"rev": "master",
 		"sha256": "sha256-fxdmT1yfgprLwkzuFgdY4t+Xs2P7aW75eFeopdJokJE="
 	},
 	"fg": {
 		"_comment": "unmaintained since 2018",
-		"commit": "master",
+		"rev": "master",
 		"sha256": "sha256-7CQ6XPjtCV/yIgEsLpB0hRDEY5tHZb5onone38+KXEU="
 	},
 	"gd": {
 		"_comment": "unmaintained since 2018",
-		"commit": "master",
+		"rev": "master",
 		"sha256": "sha256-fU9Q2weno66zRBS6QAGJkKbR1apj0puVQcuzNTkO8z8="
 	},
 	"hm": {
 		"_comment": "TODO: current master, sync it with mimalloc-bench",
-		"commit": "749640c274d54e084505a24fa758bcb5f96a25ef",
+		"rev": "749640c274d54e084505a24fa758bcb5f96a25ef",
 		"sha256": "sha256-1j7xzhuhK8ZRAJm9dJ95xiTIla7lh3LBiWc/+x/kjp0="
 	},
 	"hml": {
 		"_comment": "TODO: current master, sync it with mimalloc-bench",
-		"commit": "749640c274d54e084505a24fa758bcb5f96a25ef",
+		"rev": "749640c274d54e084505a24fa758bcb5f96a25ef",
 		"sha256": "sha256-1j7xzhuhK8ZRAJm9dJ95xiTIla7lh3LBiWc/+x/kjp0="
 	},
 	"iso": {
 		"_comment": "/",
-		"commit": "1.2.5",
+		"rev": "1.2.5",
 		"sha256": "sha256-0y2JXif5rhdvirfqsGVA8NSYT5VlVoknAVH07sFQaVA="
 	},
 	"je": {
 		"_comment": "/",
-		"commit": "5.3.0",
+		"rev": "5.3.0",
 		"sha256": "sha256-bb0OhZVXyvN+hf9BpPSykn5cGm87a0C+Y/iXKt9wTSs="
 	},
 	"lf": {
 		"_comment": "unmaintained since 2018",
-		"commit": "master",
+		"rev": "master",
 		"sha256": "sha256-aDguzakSm7I/ZARStChxw2gWcdJRy1XNoJ+0nWlNGkg="
 	},
 	"lt": {
 		"_comment": "unmaintained since 2019",
-		"commit": "master",
+		"rev": "master",
 		"sha256": "sha256-4IIaJpPccQ1bZ7AnP9Yfly1fjYi0WmKxhgJh9udfft4="
 	},
 	"lean" : {
 		"_comment": "/",
-		"commit": "21d264a66d53b0a910178ae7d9529cb5886a39b6",
+		"rev": "21d264a66d53b0a910178ae7d9529cb5886a39b6",
 		"sha256": "sha256-iFrsle2uxbsiWiI0S3kbTV3qfuwHbUTr/C+s89SZJHw="
 	},
 	"redis": {
 		"_comment": "TODO: replace old hash/document why it is not consistent",
-		"commit": "6.2.7",
+		"rev": "6.2.7",
 		"sha256": "sha256:0kab6v38x9chiv0z8r9fr9abdkscjlmj2przqp7k2mspcmzb22nj"
 	},
 	"rocksdb": {
 		"_comment": "/",
-		"commit": "v8.1.1",
+		"rev": "v8.1.1",
 		"sha256": "sha256-79hRtc5QSWLLyjRGCmuYZSoIc9IcIsnl8UCinz2sVw4="
 	}
 }

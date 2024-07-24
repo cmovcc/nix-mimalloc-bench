@@ -9,7 +9,7 @@ clangStdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "UTSASRG";
     repo = "FreeGuard";
-    rev = versions.${name}.commit;
+    rev = versions.${name}.rev;
     sha256 = versions.${name}.sha256;
   };
   makeFlags = [ "SSE2RNG=1" ];

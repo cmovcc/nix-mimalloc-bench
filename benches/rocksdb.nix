@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
   src = pkgs.fetchFromGitHub {
     owner = "facebook";
     repo = "rocksdb";
-    rev = versions.${name}.commit;
+    rev = versions.${name}.rev;
     sha256 = versions.${name}.sha256;
   };
   nativeBuildInputs = with pkgs; [ bash util-linux which gflags perl snappy ];

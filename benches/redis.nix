@@ -7,7 +7,7 @@ in
 stdenv.mkDerivation rec {
   name = "redis";
   src = builtins.fetchTarball {
-    url = "http://download.redis.io/releases/redis-${versions.${name}.commit}.tar.gz";
+    url = "http://download.redis.io/releases/redis-${versions.${name}.rev}.tar.gz";
     sha256 = versions.${name}.sha256;
   };
   nativeBuildInputs = with pkgs; [ pkg-config ];

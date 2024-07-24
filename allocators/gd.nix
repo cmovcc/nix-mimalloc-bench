@@ -9,7 +9,7 @@ clangStdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "UTSASRG";
     repo = "Guarder";
-    rev = versions.${name}.commit;
+    rev = versions.${name}.rev;
     sha256 = versions.${name}.sha256;
   };
   installPhase = "mkdir $out && cp libguarder.so $out";
