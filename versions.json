@@ -15,7 +15,12 @@
 		"sha256": "sha256-fU9Q2weno66zRBS6QAGJkKbR1apj0puVQcuzNTkO8z8="
 	},
 	"hm": {
-		"_comment": "current master, sync it with mimalloc-bench",
+		"_comment": "TODO: current master, sync it with mimalloc-bench",
+		"commit": "749640c274d54e084505a24fa758bcb5f96a25ef",
+		"sha256": "sha256-1j7xzhuhK8ZRAJm9dJ95xiTIla7lh3LBiWc/+x/kjp0="
+	},
+	"hml": {
+		"_comment": "TODO: current master, sync it with mimalloc-bench",
 		"commit": "749640c274d54e084505a24fa758bcb5f96a25ef",
 		"sha256": "sha256-1j7xzhuhK8ZRAJm9dJ95xiTIla7lh3LBiWc/+x/kjp0="
 	}

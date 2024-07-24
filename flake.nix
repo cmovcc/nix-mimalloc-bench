@@ -12,11 +12,13 @@
       ff = pkgs.callPackage ./allocators/ff.nix {};
       fg = pkgs.callPackage ./allocators/fg.nix {};
       gd = pkgs.callPackage ./allocators/gd.nix {};
+      #TODO: hd
       hm = pkgs.callPackage ./allocators/hm.nix {};
+      hml = pkgs.callPackage ./allocators/hml.nix {};
     in
     {
       packages.${system} = {
-        inherit ff fg gd hm;
+        inherit ff fg gd hm hml;
       };
     };
 }
