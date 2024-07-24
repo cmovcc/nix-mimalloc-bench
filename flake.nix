@@ -28,6 +28,7 @@
       ## TODO: lp
       lt = pkgs.callPackage ./allocators/lt.nix {};
       # benches
+      lean = pkgs.callPackage ./benches/lean.nix {};
       redis = pkgs.callPackage ./benches/redis.nix {};
       rocksdb = pkgs.callPackage ./benches/rocksdb.nix {};
 
@@ -46,7 +47,7 @@
       packages.${system} = {
         inherit
           ff fg gd hm hml iso je lf lt
-          redis rocksdb
+          lean redis rocksdb
           bench-stage1
           bench-stage2;
       };

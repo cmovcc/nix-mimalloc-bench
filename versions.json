@@ -44,6 +44,11 @@
 		"commit": "master",
 		"sha256": "sha256-4IIaJpPccQ1bZ7AnP9Yfly1fjYi0WmKxhgJh9udfft4="
 	},
+	"lean" : {
+		"_comment": "/",
+		"commit": "21d264a66d53b0a910178ae7d9529cb5886a39b6",
+		"sha256": "sha256-iFrsle2uxbsiWiI0S3kbTV3qfuwHbUTr/C+s89SZJHw="
+	},
 	"redis": {
 		"_comment": "TODO: replace old hash/document why it is not consistent",
 		"commit": "6.2.7",
