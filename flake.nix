@@ -52,6 +52,10 @@
       bench-stage3 = pkgs.callPackage ./benches/stage3.nix {
         inherit bench-stage2 benches;
       };
+      ## Stage 4 : build allocators and add output to previous stage
+      bench-stage4 = pkgs.callPackage ./benches/stage4.nix {
+        inherit bench-stage3 allocs;
+      };
 
       # cmd1 = executed to build bench-stage3
       # cmd2 = fix when running benchmarks
@@ -84,6 +88,12 @@
         };
       };
 
+      allocs = {
+        hm = { drv = hm; fix = ""; };
+        hml = { drv = hml;
+          fix = "sed -i 's/hm\\/out-light\\/libhardened_malloc-light/hml\\/out-light\\/libhardened_malloc-light/' bench.sh\n";
+        };
+      };
 
     in
     {
@@ -93,7 +103,8 @@
           lean redis rocksdb
           bench-stage1
           bench-stage2
-          bench-stage3;
+          bench-stage3
+          bench-stage4;
       };
     };
 }
