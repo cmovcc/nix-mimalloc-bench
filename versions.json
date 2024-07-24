@@ -36,7 +36,12 @@
 	},
 	"lf": {
 		"_comment": "unmaintained since 2018",
-		"commit": "915f51b282c5a31b18fb9b96ef19da410b00a421",
+		"commit": "master",
 		"sha256": "sha256-aDguzakSm7I/ZARStChxw2gWcdJRy1XNoJ+0nWlNGkg="
+	},
+	"lt": {
+		"_comment": "unmaintained since 2019",
+		"commit": "master",
+		"sha256": "sha256-4IIaJpPccQ1bZ7AnP9Yfly1fjYi0WmKxhgJh9udfft4="
 	}
 }

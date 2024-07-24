@@ -19,10 +19,12 @@
       iso = pkgs.callPackage ./allocators/iso.nix {};
       je = pkgs.callPackage ./allocators/je.nix {};
       lf = pkgs.callPackage ./allocators/lf.nix {};
+      #TODO: lp
+      lt = pkgs.callPackage ./allocators/lt.nix {};
     in
     {
       packages.${system} = {
-        inherit ff fg gd hm hml iso je lf;
+        inherit ff fg gd hm hml iso je lf lt;
       };
     };
 }
