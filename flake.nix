@@ -11,6 +11,7 @@
 
   outputs = inputs@{self, nixpkgs, mimalloc-bench}:
     let
+      #TODO: enableParallelBuilding = true seems to not be the default
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
       # allocators
@@ -26,10 +27,14 @@
       lf = pkgs.callPackage ./allocators/lf.nix {};
       ## TODO: lp
       lt = pkgs.callPackage ./allocators/lt.nix {};
-      # benches
+      # benches wrappers
       ## stage 1: fetch mimalloc-bench repo + external resources
       bench-stage1 = pkgs.callPackage ./benches/stage1.nix {
         inherit mimalloc-bench;
+      };
+      ## stage 2: build basic benches and add output to previous stage
+      bench-stage2 = pkgs.callPackage ./benches/stage2.nix {
+        inherit mimalloc-bench bench-stage1;
       };
 
     in
@@ -37,7 +42,8 @@
       packages.${system} = {
         inherit
           ff fg gd hm hml iso je lf lt
-          bench-stage1;
+          bench-stage1
+          bench-stage2;
       };
     };
 }
