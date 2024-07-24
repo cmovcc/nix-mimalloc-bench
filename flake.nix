@@ -27,6 +27,8 @@
       lf = pkgs.callPackage ./allocators/lf.nix {};
       ## TODO: lp
       lt = pkgs.callPackage ./allocators/lt.nix {};
+      # benches
+      redis = pkgs.callPackage ./benches/redis.nix {};
       # benches wrappers
       ## stage 1: fetch mimalloc-bench repo + external resources
       bench-stage1 = pkgs.callPackage ./benches/stage1.nix {
@@ -42,6 +44,7 @@
       packages.${system} = {
         inherit
           ff fg gd hm hml iso je lf lt
+          redis
           bench-stage1
           bench-stage2;
       };
