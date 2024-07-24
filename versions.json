@@ -1,8 +1,13 @@
 {
 	"ff": {
-		"_comment": "unmaintained",
+		"_comment": "unmaintained since 2022",
 		"commit": "2f24ecf728886dc0ea29b5f2adab2df9c881befa",
 		"sha256": "sha256-fxdmT1yfgprLwkzuFgdY4t+Xs2P7aW75eFeopdJokJE="
+	},
+	"fg": {
+		"_comment": "unmaintained since 2018",
+		"commit": "bfdf6d9a5b25c3f8f974c6a2ac7bb286e5c2b296",
+		"sha256": "sha256-7CQ6XPjtCV/yIgEsLpB0hRDEY5tHZb5onone38+KXEU="
 	},
 	"hm": {
 		"_comment": "current master, sync it with mimalloc-bench",

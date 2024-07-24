@@ -9,22 +9,13 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      test = pkgs.stdenv.mkDerivation {
-        name = "test";
-        installPhase = "touch $out";
-      };
       ff = pkgs.callPackage ./allocators/ff.nix {};
+      fg = pkgs.callPackage ./allocators/fg.nix {};
       hm = pkgs.callPackage ./allocators/hm.nix {};
     in
     {
       packages.${system} = {
-        inherit ff hm;
+        inherit ff fg hm;
       };
     };
 }
-
-
-
-
-
-
