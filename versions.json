@@ -1,17 +1,17 @@
 {
 	"ff": {
 		"_comment": "unmaintained since 2022",
-		"commit": "2f24ecf728886dc0ea29b5f2adab2df9c881befa",
+		"commit": "master",
 		"sha256": "sha256-fxdmT1yfgprLwkzuFgdY4t+Xs2P7aW75eFeopdJokJE="
 	},
 	"fg": {
 		"_comment": "unmaintained since 2018",
-		"commit": "bfdf6d9a5b25c3f8f974c6a2ac7bb286e5c2b296",
+		"commit": "master",
 		"sha256": "sha256-7CQ6XPjtCV/yIgEsLpB0hRDEY5tHZb5onone38+KXEU="
 	},
 	"gd": {
 		"_comment": "unmaintained since 2018",
-		"commit": "9e85978aa2e883010cb5d0c4ae1ae7fe7b8fbe6c",
+		"commit": "master",
 		"sha256": "sha256-fU9Q2weno66zRBS6QAGJkKbR1apj0puVQcuzNTkO8z8="
 	},
 	"hm": {
