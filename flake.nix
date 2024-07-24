@@ -15,10 +15,11 @@
       #TODO: hd
       hm = pkgs.callPackage ./allocators/hm.nix {};
       hml = pkgs.callPackage ./allocators/hml.nix {};
+      iso = pkgs.callPackage ./allocators/iso.nix {};
     in
     {
       packages.${system} = {
-        inherit ff fg gd hm hml;
+        inherit ff fg gd hm hml iso;
       };
     };
 }

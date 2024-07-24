@@ -23,5 +23,10 @@
 		"_comment": "TODO: current master, sync it with mimalloc-bench",
 		"commit": "749640c274d54e084505a24fa758bcb5f96a25ef",
 		"sha256": "sha256-1j7xzhuhK8ZRAJm9dJ95xiTIla7lh3LBiWc/+x/kjp0="
+	},
+	"iso": {
+		"_comment": "/",
+		"commit": "1.2.5",
+		"sha256": "sha256-0y2JXif5rhdvirfqsGVA8NSYT5VlVoknAVH07sFQaVA="
 	}
 }
