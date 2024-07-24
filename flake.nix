@@ -16,10 +16,11 @@
       hm = pkgs.callPackage ./allocators/hm.nix {};
       hml = pkgs.callPackage ./allocators/hml.nix {};
       iso = pkgs.callPackage ./allocators/iso.nix {};
+      je = pkgs.callPackage ./allocators/je.nix {};
     in
     {
       packages.${system} = {
-        inherit ff fg gd hm hml iso;
+        inherit ff fg gd hm hml iso je;
       };
     };
 }

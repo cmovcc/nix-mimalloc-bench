@@ -28,5 +28,10 @@
 		"_comment": "/",
 		"commit": "1.2.5",
 		"sha256": "sha256-0y2JXif5rhdvirfqsGVA8NSYT5VlVoknAVH07sFQaVA="
+	},
+	"je": {
+		"_comment": "/",
+		"commit": "5.3.0",
+		"sha256": "sha256-bb0OhZVXyvN+hf9BpPSykn5cGm87a0C+Y/iXKt9wTSs="
 	}
 }
