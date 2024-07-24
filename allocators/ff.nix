@@ -5,13 +5,12 @@ in
 { stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  name = "hm";
+  name = "ff";
   src = fetchFromGitHub {
-    owner = "GrapheneOS";
-    repo = "hardened_malloc";
+    owner = "bwickman97";
+    repo = "ffmalloc";
     rev = versions.${name}.commit;
     sha256 = versions.${name}.sha256;
-    #sha256 = lib.fakeHash;
   };
-  installPhase = "mkdir -p $out/out && cp out/libhardened_malloc.so $out/out";
+  installPhase = "mkdir $out && cp libffmallocnpmt.so $out";
 }

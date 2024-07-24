@@ -1,5 +1,11 @@
 {
+	"ff": {
+		"_comment": "unmaintained",
+		"commit": "2f24ecf728886dc0ea29b5f2adab2df9c881befa",
+		"sha256": "sha256-fxdmT1yfgprLwkzuFgdY4t+Xs2P7aW75eFeopdJokJE="
+	},
 	"hm": {
+		"_comment": "current master, sync it with mimalloc-bench",
 		"commit": "749640c274d54e084505a24fa758bcb5f96a25ef",
 		"sha256": "sha256-1j7xzhuhK8ZRAJm9dJ95xiTIla7lh3LBiWc/+x/kjp0="
 	}

@@ -13,12 +13,12 @@
         name = "test";
         installPhase = "touch $out";
       };
-      version = "dirty";
-      hm = pkgs.callPackage ./allocators/hm.nix { inherit version; };
+      ff = pkgs.callPackage ./allocators/ff.nix {};
+      hm = pkgs.callPackage ./allocators/hm.nix {};
     in
     {
       packages.${system} = {
-        inherit hm;
+        inherit ff hm;
       };
     };
 }
