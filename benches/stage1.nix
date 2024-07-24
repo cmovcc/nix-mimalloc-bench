@@ -1,4 +1,5 @@
 let
+  versions = builtins.fromJSON (builtins.readFile ../versions.json);
   bench-sh6bench = builtins.fetchTarball {
    url = "http://www.microquill.com/smartheap/shbench/bench.zip";
    sha256 = "sha256:0pdf01d7mdg7mf1pxw3dcizfm7s93b9df8sjq6pzmrfl3dcwjq33";
@@ -10,6 +11,10 @@ let
   bench-largepdf = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/geekaaron/Resources/master/resources/Writing_a_Simple_Operating_System--from_Scratch.pdf";
     sha256 = "sha256:04pddvdhy4x2fh9jjq9rwl52r8svcam7izg48z64kh75x611hm29";
+  };
+  bench-lua = builtins.fetchTarball {
+    url = "https://github.com/lua/lua/archive/refs/tags/v${versions.lua.rev}.zip";
+    sha256 = versions.lua.sha256;
   };
 in
 
@@ -41,6 +46,9 @@ stdenv.mkDerivation {
     # large pdf file
     mkdir extern
     cp ${bench-largepdf} extern/large.pdf
+
+    # lua
+    cp -r ${bench-lua} extern/lua
   '';
   installPhase = "mkdir $out && cp -r * $out";
 }
