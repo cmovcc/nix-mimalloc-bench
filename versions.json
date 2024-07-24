@@ -45,8 +45,13 @@
 		"sha256": "sha256-4IIaJpPccQ1bZ7AnP9Yfly1fjYi0WmKxhgJh9udfft4="
 	},
 	"redis": {
-		"_comment": "/",
+		"_comment": "TODO: replace old hash/document why it is not consistent",
 		"commit": "6.2.7",
 		"sha256": "sha256:0kab6v38x9chiv0z8r9fr9abdkscjlmj2przqp7k2mspcmzb22nj"
+	},
+	"rocksdb": {
+		"_comment": "/",
+		"commit": "v8.1.1",
+		"sha256": "sha256-79hRtc5QSWLLyjRGCmuYZSoIc9IcIsnl8UCinz2sVw4="
 	}
 }
