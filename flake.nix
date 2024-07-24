@@ -12,11 +12,14 @@
   # Various possible improvements:
   # - enableParallelBuilding = true seems to not be the default
   # - add toggle to try to compile benchmarks using bleeding edge toolchains
+  # - file upstream issue + PR: remove version in redis and rocksdb paths
   outputs = inputs@{self, nixpkgs, mimalloc-bench}:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      # allocators
+      lib = pkgs.lib;
+
+      # Allocators
       ## TODO: dh
       ff = pkgs.callPackage ./allocators/ff.nix {};
       fg = pkgs.callPackage ./allocators/fg.nix {};
@@ -31,21 +34,56 @@
       lt = pkgs.callPackage ./allocators/lt.nix {};
       ## TODO: mesh, mi, mi2, mng, nomesh, pa, rp, sc, st (!), scudo, sg, sm, sn, tbb, tc, tcg
 
-      # benches
+      # Benches
       lean = pkgs.callPackage ./benches/lean.nix {};
       redis = pkgs.callPackage ./benches/redis.nix {};
       rocksdb = pkgs.callPackage ./benches/rocksdb.nix {};
 
-      # benches wrappers
-      ## stage 1: fetch mimalloc-bench repo + external resources
-      ### TODO: add lua
+      # Benches wrappers
+      ## Stage 1: fetch mimalloc-bench repo + external resources
       bench-stage1 = pkgs.callPackage ./benches/stage1.nix {
         inherit mimalloc-bench;
       };
-      ## stage 2: build basic benches and add output to previous stage
+      ## Stage 2: build basic benches and add output to previous stage
       bench-stage2 = pkgs.callPackage ./benches/stage2.nix {
-        inherit mimalloc-bench bench-stage1;
+        inherit bench-stage1;
       };
+      ## Stage 3: build other benches and add output to previous stage
+      bench-stage3 = pkgs.callPackage ./benches/stage3.nix {
+        inherit bench-stage2 benches;
+      };
+
+      # cmd1 = executed to build bench-stage3
+      # cmd2 = fix when running benchmarks
+      benches = {
+        redis = { drv = redis; benches = "redis"; cmd2 = "";
+          cmd1 = ''
+            cp -r ${redis} extern/redis
+          '';
+        };
+        lean = { drv = lean; benches = "lean lean-mathlib";
+          # exclude out/release to avoid cmake issues during benchmark
+          # as cmake cache does not support to be moved
+          cmd1 = ''
+            rsync -av ${lean}/ extern/lean --exclude=out/release/*
+            mkdir extern/mathlib
+            cp -u extern/lean/leanpkg/leanpkg.toml extern/mathlib
+          '';
+          # workaround around cmake issue
+          cmd2 = ''
+            mkdir -p extern/lean/out/release
+            pushd extern/lean/out/release
+            cmake ../../src -DCUSTOM_ALLOCATORS=OFF -DLEAN_EXTRA_CXX_FLAGS="-w"
+            popd
+          '';
+        };
+        rocksdb = { drv = rocksdb; benches = "rocksdb"; cmd2 = "";
+          cmd1 = ''
+            cp -r ${rocksdb} extern/rocksdb
+          '';
+        };
+      };
+
 
     in
     {
@@ -54,7 +92,8 @@
           ff fg gd hm hml iso je lf lt
           lean redis rocksdb
           bench-stage1
-          bench-stage2;
+          bench-stage2
+          bench-stage3;
       };
     };
 }

@@ -1,4 +1,4 @@
-{ stdenv, pkgs, mimalloc-bench, bench-stage1 }:
+{ stdenv, pkgs, bench-stage1 }:
 
 stdenv.mkDerivation {
   name = "bench-stage2";
