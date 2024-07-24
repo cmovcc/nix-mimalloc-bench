@@ -11,11 +11,12 @@
       pkgs = import nixpkgs { inherit system; };
       ff = pkgs.callPackage ./allocators/ff.nix {};
       fg = pkgs.callPackage ./allocators/fg.nix {};
+      gd = pkgs.callPackage ./allocators/gd.nix {};
       hm = pkgs.callPackage ./allocators/hm.nix {};
     in
     {
       packages.${system} = {
-        inherit ff fg hm;
+        inherit ff fg gd hm;
       };
     };
 }

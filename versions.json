@@ -9,6 +9,11 @@
 		"commit": "bfdf6d9a5b25c3f8f974c6a2ac7bb286e5c2b296",
 		"sha256": "sha256-7CQ6XPjtCV/yIgEsLpB0hRDEY5tHZb5onone38+KXEU="
 	},
+	"gd": {
+		"_comment": "unmaintained since 2018",
+		"commit": "9e85978aa2e883010cb5d0c4ae1ae7fe7b8fbe6c",
+		"sha256": "sha256-fU9Q2weno66zRBS6QAGJkKbR1apj0puVQcuzNTkO8z8="
+	},
 	"hm": {
 		"_comment": "current master, sync it with mimalloc-bench",
 		"commit": "749640c274d54e084505a24fa758bcb5f96a25ef",
