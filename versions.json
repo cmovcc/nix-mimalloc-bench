@@ -33,5 +33,10 @@
 		"_comment": "/",
 		"commit": "5.3.0",
 		"sha256": "sha256-bb0OhZVXyvN+hf9BpPSykn5cGm87a0C+Y/iXKt9wTSs="
+	},
+	"lf": {
+		"_comment": "unmaintained since 2018",
+		"commit": "915f51b282c5a31b18fb9b96ef19da410b00a421",
+		"sha256": "sha256-aDguzakSm7I/ZARStChxw2gWcdJRy1XNoJ+0nWlNGkg="
 	}
 }
