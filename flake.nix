@@ -9,9 +9,11 @@
     };
   };
 
+  # Various possible improvements:
+  # - enableParallelBuilding = true seems to not be the default
+  # - add toggle to try to compile benchmarks using bleeding edge toolchains
   outputs = inputs@{self, nixpkgs, mimalloc-bench}:
     let
-      #TODO: enableParallelBuilding = true seems to not be the default
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
       # allocators
@@ -27,6 +29,8 @@
       lf = pkgs.callPackage ./allocators/lf.nix {};
       ## TODO: lp
       lt = pkgs.callPackage ./allocators/lt.nix {};
+      ## TODO: mesh, mi, mi2, mng, nomesh, pa, rp, sc, st (!), scudo, sg, sm, sn, tbb, tc, tcg
+
       # benches
       lean = pkgs.callPackage ./benches/lean.nix {};
       redis = pkgs.callPackage ./benches/redis.nix {};
@@ -34,6 +38,7 @@
 
       # benches wrappers
       ## stage 1: fetch mimalloc-bench repo + external resources
+      ### TODO: add lua
       bench-stage1 = pkgs.callPackage ./benches/stage1.nix {
         inherit mimalloc-bench;
       };
