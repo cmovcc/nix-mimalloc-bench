@@ -13,6 +13,8 @@
   # - enableParallelBuilding = true seems to not be the default
   # - add toggle to try to compile benchmarks using bleeding edge toolchains
   # - file upstream issue + PR: remove version in redis and rocksdb paths
+  # - allocators:
+  #   - LeanGuard, GuaNary article (building on top of SlimGuard)
   outputs = inputs@{self, nixpkgs, mimalloc-bench}:
     let
       system = "x86_64-linux";
@@ -34,7 +36,9 @@
       lt = pkgs.callPackage ./allocators/lt.nix {};
       ## TODO: mesh, mi, mi2
       mng = pkgs.callPackage ./allocators/mng.nix {};
-      ## TODO: nomesh, pa, rp, sc, st (!), scudo, sg, sm, sn, tbb, tc, tcg
+      ## TODO: nomesh, pa, rp, sc, st (!), scudo
+      sg = pkgs.callPackage ./allocators/sg.nix {};
+      ## TODO: sm, sn, tbb, tc, tcg
 
       # Benches
       lean = pkgs.callPackage ./benches/lean.nix {};
@@ -105,7 +109,7 @@
     {
       packages.${system} = {
         inherit
-          ff fg gd hm hml iso je lf lt mng
+          ff fg gd hm hml iso je lf lt mng sg
           lean redis rocksdb
           bench-stage1
           bench-stage2
