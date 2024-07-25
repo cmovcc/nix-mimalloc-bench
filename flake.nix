@@ -42,7 +42,9 @@
       ## TODO: st (!), scudo
       sg = pkgs.callPackage ./allocators/sg.nix {};
       sm = pkgs.callPackage ./allocators/sm.nix {};
-      ## TODO: sn, tbb, tc, tcg
+      ## TODO: sn
+      tbb = pkgs.callPackage ./allocators/tbb.nix {};
+      ## TODO: tc, tcg
 
       # Benches
       lean = pkgs.callPackage ./benches/lean.nix {};
@@ -113,7 +115,7 @@
     {
       packages.${system} = {
         inherit
-          ff fg gd hm hml iso je lf lt mng rp sc sg sm
+          ff fg gd hm hml iso je lf lt mng rp sc sg sm tbb
           lean redis rocksdb
           bench-stage1
           bench-stage2

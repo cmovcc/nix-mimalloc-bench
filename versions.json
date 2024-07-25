@@ -69,6 +69,11 @@
 		"rev": "master",
 		"sha256": "sha256-+21W9YwLoSfZETlOfVv5DTE0n9oRmRnZ7jeb64ms52k="
 	},
+	"tbb": {
+		"_comment": "/",
+		"rev": "v2021.9.0",
+		"sha256": "sha256-Sa1K+s+m12ieU859AOzbrISuNXzYUDacafR9A2o5ZzU="
+	},
 	"lean" : {
 		"_comment": "3.51.1 + patch for recent compilers",
 		"rev": "21d264a66d53b0a910178ae7d9529cb5886a39b6",
