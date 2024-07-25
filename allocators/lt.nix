@@ -2,7 +2,7 @@ let
   versions = builtins.fromJSON (builtins.readFile ../versions.json);
 in
 
-{ stdenv, fetchFromGitHub, lib }:
+{ stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
   name = "lt";
