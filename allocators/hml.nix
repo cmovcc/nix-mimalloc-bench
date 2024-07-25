@@ -13,5 +13,5 @@ stdenv.mkDerivation rec {
     sha256 = versions.${name}.sha256;
   };
   makeFlags = [ "VARIANT=light" ];
-  installPhase = "mkdir -p $out/out-light && cp out-light/libhardened_malloc-light.so $out/out";
+  installPhase = "mkdir -p $out/out-light && cp out-light/libhardened_malloc-light.so $out/out-light";
 }
