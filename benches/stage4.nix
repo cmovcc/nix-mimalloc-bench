@@ -2,12 +2,14 @@
 
 let
   objs_allocs = builtins.map (name: builtins.getAttr name allocs) (builtins.attrNames allocs);
-  conf_phase = lib.strings.concatMapStrings (obj:
-    "cp -r ${obj.drv} extern/${obj.drv.name}\n"
-  ) objs_allocs;
-  build_phase = lib.strings.concatMapStrings (obj:
-    "${obj.fix}"
-  ) objs_allocs;
+  conf_phase = lib.strings.concatMapStrings
+    (obj: "cp -r ${obj.drv} extern/${obj.drv.name}\n") objs_allocs;
+  build_phase = lib.strings.concatMapStrings
+    (obj: "${obj.fix}")
+    objs_allocs;
+  str_allocs_installed = lib.strings.concatMapStrings
+    (obj: "${obj.drv.name}: \n")
+    objs_allocs;
 in
 
 stdenv.mkDerivation {
@@ -19,6 +21,9 @@ stdenv.mkDerivation {
     ++
     (builtins.map (obj: obj.drv) objs_allocs);
   configurePhase = conf_phase;
-  buildPhase = build_phase;
+  buildPhase = ''
+    ${build_phase}
+    echo "${str_allocs_installed}" > extern/versions.txt
+  '';
   installPhase = "mkdir $out && cp -r * $out";
 }

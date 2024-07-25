@@ -52,9 +52,13 @@
       bench-stage3 = pkgs.callPackage ./benches/stage3.nix {
         inherit bench-stage2 benches;
       };
-      ## Stage 4 : build allocators and add output to previous stage
+      ## Stage 4: build allocators and add output to previous stage
       bench-stage4 = pkgs.callPackage ./benches/stage4.nix {
         inherit bench-stage3 allocs;
+      };
+      ## Run: run built benchmarks (alla allt)
+      run = pkgs.callPackage ./benches/run.nix {
+        inherit bench-stage4 allocs benches;
       };
 
       # cmd1 = executed to build bench-stage3
@@ -104,7 +108,8 @@
           bench-stage1
           bench-stage2
           bench-stage3
-          bench-stage4;
+          bench-stage4
+          run;
       };
     };
 }

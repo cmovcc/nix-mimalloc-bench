@@ -49,6 +49,10 @@ stdenv.mkDerivation {
 
     # lua
     cp -r ${bench-lua} extern/lua
+
+    # to-be-upstreamed fixes
+    sed -i 's|redis_dir="$localdevdir/redis-$version_redis/src"|redis_dir="$localdevdir/redis/src"|' bench.sh
+    sed -i 's|rocksdb_dir="$localdevdir/rocksdb-$version_rocksdb"|rocksdb_dir="$localdevdir/rocksdb"|' bench.sh
   '';
   installPhase = "mkdir $out && cp -r * $out";
 }
