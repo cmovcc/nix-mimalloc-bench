@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
   ];
   configurePhase = "gyp --depth=. scalloc.gyp";
   makeFlags = [ "BUILDTYPE=Release"];
-  # TODO: upstream fix? largely unmaintained
+  # unmaintained
   NIX_CFLAGS_COMPILE = "-Wno-stringop-overflow -Wno-stringop-truncation";
   installPhase = "mkdir -p $out/out/Release/lib.target/ && cp out/Release/lib.target/libscalloc.so $out/out/Release/lib.target/ ";
 }

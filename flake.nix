@@ -22,11 +22,11 @@
       lib = pkgs.lib;
 
       # Allocators
-      ## TODO: dh
+      ## TODO: dh, Heap-Layers dependency
       ff = pkgs.callPackage ./allocators/ff.nix {};
       fg = pkgs.callPackage ./allocators/fg.nix {};
       gd = pkgs.callPackage ./allocators/gd.nix {};
-      ## TODO: hd
+      ## TODO: hd, Heap-Layers dependency
       hm = pkgs.callPackage ./allocators/hm.nix {};
       hml = pkgs.callPackage ./allocators/hml.nix {};
       iso = pkgs.callPackage ./allocators/iso.nix {};
@@ -41,7 +41,8 @@
       sc = pkgs.callPackage ./allocators/sc.nix {};
       ## TODO: st (!), scudo
       sg = pkgs.callPackage ./allocators/sg.nix {};
-      ## TODO: sm, sn, tbb, tc, tcg
+      sm = pkgs.callPackage ./allocators/sm.nix {};
+      ## TODO: sn, tbb, tc, tcg
 
       # Benches
       lean = pkgs.callPackage ./benches/lean.nix {};
@@ -112,7 +113,7 @@
     {
       packages.${system} = {
         inherit
-          ff fg gd hm hml iso je lf lt mng rp sc sg
+          ff fg gd hm hml iso je lf lt mng rp sc sg sm
           lean redis rocksdb
           bench-stage1
           bench-stage2
