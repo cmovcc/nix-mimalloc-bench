@@ -54,6 +54,11 @@
 		"rev": "39f5cfaa35f73b445d6ec66629ab3963eeb5fa7a",
 		"sha256": "sha256-Zq3aTVegY2ilSnAwNsnkydBsRW4/p4L0sH4FNdMc4/0="
 	},
+	"sc": {
+		"_comment": "unmaintained since 2016",
+		"rev": "master",
+		"sha256": "sha256-U4+TYhwhf/s/8XSkhVp3CQoYiHyvcDDREWuuD7X9734="
+	},
 	"sg": {
 		"_comment": "unmaintained since 2022, minor commit in 2024",
 		"rev": "master",

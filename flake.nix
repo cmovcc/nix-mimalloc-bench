@@ -38,7 +38,8 @@
       mng = pkgs.callPackage ./allocators/mng.nix {};
       ## TODO: nomesh, pa
       rp = pkgs.callPackage ./allocators/rp.nix {};
-      ## TODO: sc, st (!), scudo
+      sc = pkgs.callPackage ./allocators/sc.nix {};
+      ## TODO: st (!), scudo
       sg = pkgs.callPackage ./allocators/sg.nix {};
       ## TODO: sm, sn, tbb, tc, tcg
 
@@ -111,7 +112,7 @@
     {
       packages.${system} = {
         inherit
-          ff fg gd hm hml iso je lf lt mng rp sg
+          ff fg gd hm hml iso je lf lt mng rp sc sg
           lean redis rocksdb
           bench-stage1
           bench-stage2
