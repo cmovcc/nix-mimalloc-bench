@@ -36,7 +36,9 @@
       lt = pkgs.callPackage ./allocators/lt.nix {};
       ## TODO: mesh, mi, mi2
       mng = pkgs.callPackage ./allocators/mng.nix {};
-      ## TODO: nomesh, pa, rp, sc, st (!), scudo
+      ## TODO: nomesh, pa
+      rp = pkgs.callPackage ./allocators/rp.nix {};
+      ## TODO: sc, st (!), scudo
       sg = pkgs.callPackage ./allocators/sg.nix {};
       ## TODO: sm, sn, tbb, tc, tcg
 
@@ -109,7 +111,7 @@
     {
       packages.${system} = {
         inherit
-          ff fg gd hm hml iso je lf lt mng sg
+          ff fg gd hm hml iso je lf lt mng rp sg
           lean redis rocksdb
           bench-stage1
           bench-stage2
