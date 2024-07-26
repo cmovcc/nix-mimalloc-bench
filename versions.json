@@ -40,7 +40,7 @@
 		"sha256": "sha256-aDguzakSm7I/ZARStChxw2gWcdJRy1XNoJ+0nWlNGkg="
 	},
 	"lp": {
-		"_comment": "/",
+		"_comment": "sparse checkout, rev prefix seems to be required",
 		"rev": "refs/heads/main",
         "sha256": "sha256-6ekQdqCdEY6kjyrJUtDp+IBSk4O91pOLbxlzinbVJqM="
 	},
@@ -63,6 +63,11 @@
 		"_comment": "unmaintained since 2016",
 		"rev": "master",
 		"sha256": "sha256-U4+TYhwhf/s/8XSkhVp3CQoYiHyvcDDREWuuD7X9734="
+	},
+	"scudo": {
+		"_comment": "sparse checkout, rev prefix seems to be required",
+		"rev": "refs/heads/main",
+		"sha256": "sha256-ca3CqHmKBaxDbrqttOPDKj2xx6R1THsaD7CtnqBqRAo="
 	},
 	"sg": {
 		"_comment": "unmaintained since 2022, minor commit in 2024",

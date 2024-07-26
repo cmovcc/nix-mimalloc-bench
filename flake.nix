@@ -41,8 +41,8 @@
       ## TODO: pa: complex build process
       rp = pkgs.callPackage ./allocators/rp.nix {};
       sc = pkgs.callPackage ./allocators/sc.nix {};
+      scudo = pkgs.callPackage ./allocators/scudo.nix {};
       ## TODO: st (!), make repo public before
-      ## TODO: scudo, sparse checkout
       sg = pkgs.callPackage ./allocators/sg.nix {};
       sm = pkgs.callPackage ./allocators/sm.nix {};
       ## TODO: sn
@@ -118,7 +118,7 @@
     {
       packages.${system} = {
         inherit
-          ff fg gd hm hml iso je lf lp lt mng rp sc sg sm tbb
+          ff fg gd hm hml iso je lf lp lt mng rp sc scudo sg sm tbb
           lean redis rocksdb
           bench-stage1
           bench-stage2
