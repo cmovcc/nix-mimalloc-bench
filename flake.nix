@@ -32,14 +32,17 @@
       iso = pkgs.callPackage ./allocators/iso.nix {};
       je = pkgs.callPackage ./allocators/je.nix {};
       lf = pkgs.callPackage ./allocators/lf.nix {};
-      ## TODO: lp
+      lp = pkgs.callPackage ./allocators/lp.nix {};
       lt = pkgs.callPackage ./allocators/lt.nix {};
-      ## TODO: mesh, mi, mi2
+      ## TODO: mesh, Heap-Layers dependency
+      ## TODO: mi, mi2
       mng = pkgs.callPackage ./allocators/mng.nix {};
-      ## TODO: nomesh, pa
+      ## TODO: nomesh, Heap-Layers dependency
+      ## TODO: pa: complex build process
       rp = pkgs.callPackage ./allocators/rp.nix {};
       sc = pkgs.callPackage ./allocators/sc.nix {};
-      ## TODO: st (!), scudo
+      ## TODO: st (!), make repo public before
+      ## TODO: scudo, sparse checkout
       sg = pkgs.callPackage ./allocators/sg.nix {};
       sm = pkgs.callPackage ./allocators/sm.nix {};
       ## TODO: sn
@@ -115,7 +118,7 @@
     {
       packages.${system} = {
         inherit
-          ff fg gd hm hml iso je lf lt mng rp sc sg sm tbb
+          ff fg gd hm hml iso je lf lp lt mng rp sc sg sm tbb
           lean redis rocksdb
           bench-stage1
           bench-stage2

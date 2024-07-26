@@ -39,6 +39,11 @@
 		"rev": "master",
 		"sha256": "sha256-aDguzakSm7I/ZARStChxw2gWcdJRy1XNoJ+0nWlNGkg="
 	},
+	"lp": {
+		"_comment": "/",
+		"rev": "refs/heads/main",
+        "sha256": "sha256-6ekQdqCdEY6kjyrJUtDp+IBSk4O91pOLbxlzinbVJqM="
+	},
 	"lt": {
 		"_comment": "unmaintained since 2019",
 		"rev": "master",
