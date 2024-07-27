@@ -1,0 +1,25 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 015545b..48a8f5b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -16,8 +16,6 @@ set(CMAKE_HEADER_OUTPUT_DIRECTORY  ${CMAKE_OUTPUT_DIRECTORY}/include)
+ include(ExternalProject)
+ 
+ ExternalProject_Add(googletest
+-        GIT_REPOSITORY    https://github.com/google/googletest.git
+-        GIT_TAG           3e0e32ba300ce8afe695ad3ba7e81b21b7cf237a
+         SOURCE_DIR        "${CMAKE_CURRENT_BINARY_DIR}/googletest-src"
+         BINARY_DIR        "${CMAKE_CURRENT_BINARY_DIR}/googletest-build"
+         INSTALL_COMMAND   ""
+@@ -25,8 +23,6 @@ ExternalProject_Add(googletest
+ )
+ 
+ ExternalProject_Add(heap_layers
+-        GIT_REPOSITORY    https://github.com/emeryberger/Heap-Layers.git
+-        GIT_TAG           b0b2c2c7c5553b79c534f55317a5ab3e7d011379
+         SOURCE_DIR        "${CMAKE_CURRENT_BINARY_DIR}/heap_layers-src"
+         BINARY_DIR        "${CMAKE_CURRENT_BINARY_DIR}/heap_layers-build"
+         CONFIGURE_COMMAND ""
+-- 
+2.45.2
+

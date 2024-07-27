@@ -57,12 +57,17 @@
 	"lp": {
 		"_comment": "sparse checkout, rev prefix seems to be required",
 		"rev": "refs/heads/main",
-        "sha256": "sha256-6ekQdqCdEY6kjyrJUtDp+IBSk4O91pOLbxlzinbVJqM="
+		"sha256": "sha256-6ekQdqCdEY6kjyrJUtDp+IBSk4O91pOLbxlzinbVJqM="
 	},
 	"lt": {
 		"_comment": "unmaintained since 2019",
 		"rev": "master",
 		"sha256": "sha256-4IIaJpPccQ1bZ7AnP9Yfly1fjYi0WmKxhgJh9udfft4="
+	},
+	"mesh": {
+		"_comment": "TODO",
+		"rev": "master",
+		"sha256": "sha256-fVph5EkQusbDVtZK5kLCqoW9EDyy2v1ACUe7QzrksTw="
 	},
 	"mng": {
 		"_comment": "unmaintained since 2020",
