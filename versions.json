@@ -4,6 +4,11 @@
 		"rev": "master",
 		"sha256": "sha256-8+mhcht5teM17odF+/nVVErEsZFJx3si8E/D3ZAA1t0="
 	},
+	"gtest": {
+		"_comment": "/",
+		"rev": "main",
+		"sha256": "sha256-Cd1/ud/2irrzjSeeAaWGdFCYDmfi2OHAqO96cQJMq4o="
+	},
 	"dh": {
 		"_comment": "TODO",
 		"rev": "master",
