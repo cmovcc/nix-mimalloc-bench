@@ -29,7 +29,7 @@
       ff = pkgs.callPackage ./allocators/ff.nix {};
       fg = pkgs.callPackage ./allocators/fg.nix {};
       gd = pkgs.callPackage ./allocators/gd.nix {};
-      ## TODO: hd, Heap-Layers dependency
+      hd = pkgs.callPackage ./allocators/hd.nix { inherit heap-layers; };
       hm = pkgs.callPackage ./allocators/hm.nix {};
       hml = pkgs.callPackage ./allocators/hml.nix {};
       iso = pkgs.callPackage ./allocators/iso.nix {};
@@ -122,7 +122,7 @@
       packages.${system} = {
         inherit
           heap-layers
-          dh ff fg gd hm hml iso je lf lp lt mng rp sc scudo sg sm tbb
+          dh ff fg gd hd hm hml iso je lf lp lt mng rp sc scudo sg sm tbb
           lean redis rocksdb
           bench-stage1
           bench-stage2

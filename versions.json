@@ -24,6 +24,11 @@
 		"rev": "master",
 		"sha256": "sha256-fU9Q2weno66zRBS6QAGJkKbR1apj0puVQcuzNTkO8z8="
 	},
+	"hd": {
+		"_comment": "TODO",
+		"rev": "master",
+		"sha256": "sha256-bBuRfgjVMSHDnJLn3P+Oio33i4ZqdeB0lyaW3N8SasA="
+	},
 	"hm": {
 		"_comment": "TODO: current master, sync it with mimalloc-bench",
 		"rev": "749640c274d54e084505a24fa758bcb5f96a25ef",
