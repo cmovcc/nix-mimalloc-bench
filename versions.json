@@ -1,4 +1,14 @@
 {
+	"heap-layers": {
+		"_comment": "/",
+		"rev": "master",
+		"sha256": "sha256-8+mhcht5teM17odF+/nVVErEsZFJx3si8E/D3ZAA1t0="
+	},
+	"dh": {
+		"_comment": "TODO",
+		"rev": "master",
+		"sha256": "sha256-vHghCzXSYc6juphyub2S/vvTJEPt0byM4hzZR5TFnLU="
+	},
 	"ff": {
 		"_comment": "unmaintained since 2022",
 		"rev": "master",

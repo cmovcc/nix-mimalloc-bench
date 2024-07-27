@@ -21,8 +21,11 @@
       pkgs = import nixpkgs { inherit system; };
       lib = pkgs.lib;
 
+      # Librairies
+      heap-layers = pkgs.callPackage ./libraries/heap-layers.nix {};
+
       # Allocators
-      ## TODO: dh, Heap-Layers dependency
+      dh = pkgs.callPackage ./allocators/dh.nix { inherit heap-layers; };
       ff = pkgs.callPackage ./allocators/ff.nix {};
       fg = pkgs.callPackage ./allocators/fg.nix {};
       gd = pkgs.callPackage ./allocators/gd.nix {};
@@ -118,7 +121,8 @@
     {
       packages.${system} = {
         inherit
-          ff fg gd hm hml iso je lf lp lt mng rp sc scudo sg sm tbb
+          heap-layers
+          dh ff fg gd hm hml iso je lf lp lt mng rp sc scudo sg sm tbb
           lean redis rocksdb
           bench-stage1
           bench-stage2
