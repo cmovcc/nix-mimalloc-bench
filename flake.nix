@@ -37,10 +37,10 @@
       lf = pkgs.callPackage ./allocators/lf.nix {};
       lp = pkgs.callPackage ./allocators/lp.nix {};
       lt = pkgs.callPackage ./allocators/lt.nix {};
-      ## TODO: mesh, Heap-Layers dependency
+      ## TODO: mesh, Heap-Layers dependency + CMake stuff
       ## TODO: mi, mi2
       mng = pkgs.callPackage ./allocators/mng.nix {};
-      ## TODO: nomesh, Heap-Layers dependency
+      ## TODO: nomesh, Heap-Layers dependency + CMake stuff
       ## TODO: pa: complex build process
       rp = pkgs.callPackage ./allocators/rp.nix {};
       sc = pkgs.callPackage ./allocators/sc.nix {};
@@ -50,7 +50,8 @@
       sm = pkgs.callPackage ./allocators/sm.nix {};
       ## TODO: sn
       tbb = pkgs.callPackage ./allocators/tbb.nix {};
-      ## TODO: tc, tcg
+      tc = pkgs.callPackage ./allocators/tc.nix {};
+      ## TODO: tcg
 
       # Benches
       lean = pkgs.callPackage ./benches/lean.nix {};
@@ -122,7 +123,7 @@
       packages.${system} = {
         inherit
           heap-layers
-          dh ff fg gd hd hm hml iso je lf lp lt mng rp sc scudo sg sm tbb
+          dh ff fg gd hd hm hml iso je lf lp lt mng rp sc scudo sg sm tbb tc
           lean redis rocksdb
           bench-stage1
           bench-stage2
