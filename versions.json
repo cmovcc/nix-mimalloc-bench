@@ -104,6 +104,11 @@
 		"rev": "master",
 		"sha256": "sha256-+21W9YwLoSfZETlOfVv5DTE0n9oRmRnZ7jeb64ms52k="
 	},
+	"sn": {
+		"_comment": "/",
+		"rev": "0.6.2",
+		"sha256": "sha256-1MCR1xAXx/AzEuEg6i8EIUkVwGHntHVOyWOe/r6ecqk="
+	},
 	"tbb": {
 		"_comment": "/",
 		"rev": "v2021.9.0",

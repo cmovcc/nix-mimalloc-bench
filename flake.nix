@@ -26,12 +26,17 @@
       gtest = pkgs.callPackage ./libraries/gtest.nix {};
 
       # Allocators
-      dh = pkgs.callPackage ./allocators/dh.nix { inherit heap-layers; };
+      dh = pkgs.callPackage ./allocators/dh.nix {
+        inherit heap-layers;
+      };
       ff = pkgs.callPackage ./allocators/ff.nix {};
       fg = pkgs.callPackage ./allocators/fg.nix {};
       gd = pkgs.callPackage ./allocators/gd.nix {};
-      hd = pkgs.callPackage ./allocators/hd.nix { inherit heap-layers; };
+      hd = pkgs.callPackage ./allocators/hd.nix {
+        inherit heap-layers;
+      };
       hm = pkgs.callPackage ./allocators/hm.nix {};
+      # TODO: refactor
       hml = pkgs.callPackage ./allocators/hml.nix {};
       iso = pkgs.callPackage ./allocators/iso.nix {};
       je = pkgs.callPackage ./allocators/je.nix {};
@@ -54,10 +59,13 @@
       ## TODO: st (!), make repo public before
       sg = pkgs.callPackage ./allocators/sg.nix {};
       sm = pkgs.callPackage ./allocators/sm.nix {};
-      ## TODO: sn
+      sn = pkgs.callPackage ./allocators/sn.nix {};
+      sn-sec = pkgs.callPackage ./allocators/sn.nix {
+        hardened = true;
+      };
       tbb = pkgs.callPackage ./allocators/tbb.nix {};
       tc = pkgs.callPackage ./allocators/tc.nix {};
-      ## TODO: tcg
+      ## TODO: tcg, bazel
 
       # Benches
       lean = pkgs.callPackage ./benches/lean.nix {};
@@ -129,7 +137,7 @@
       packages.${system} = {
         inherit
           heap-layers
-          dh ff fg gd hd hm hml iso je lf lp lt mesh mng nomesh rp sc scudo sg sm tbb tc
+          dh ff fg gd hd hm hml iso je lf lp lt mesh mng nomesh rp sc scudo sg sm sn sn-sec tbb tc
           lean redis rocksdb
           bench-stage1
           bench-stage2
